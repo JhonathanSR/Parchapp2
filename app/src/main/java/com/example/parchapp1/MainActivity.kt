@@ -59,6 +59,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun goIniciar(){
         val i = Intent(this, MainMenu::class.java)
+        Toast.makeText(this, "Bienvenido a Parchapp",
+            Toast.LENGTH_SHORT).show()
         startActivity(i)
     }
     private fun goRegis(){
