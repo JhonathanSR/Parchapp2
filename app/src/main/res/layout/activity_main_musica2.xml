@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#011127"
+    tools:context=".MainMusica2">
+
+    <ImageView
+        android:id="@+id/img_Log4"
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintStart_toEndOf="@+id/img_Ant8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logosinnombre" />
+
+    <ImageView
+        android:id="@+id/img_Ant8"
+        android:layout_width="63dp"
+        android:layout_height="33dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnM2"
+        app:layout_constraintStart_toStartOf="@+id/btnM2"
+        app:layout_constraintTop_toTopOf="@+id/btnM2"
+        app:srcCompat="@drawable/flecha" />
+
+    <Button
+        android:id="@+id/btnM2"
+        android:layout_width="74dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#D9D9D9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgA2"
+        android:layout_width="63dp"
+        android:layout_height="33dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnM2"
+        app:layout_constraintStart_toStartOf="@+id/btnM2"
+        app:layout_constraintTop_toTopOf="@+id/btnM2"
+        app:srcCompat="@drawable/flecha" />
+
+    <EditText
+        android:id="@+id/edtEvent1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
+        android:ems="10"
+        android:hint="Nombre de Evento"
+        android:inputType="text"
+        android:text="Nombre de Evento"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnParch1"
+        android:layout_width="247dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#0BC23F"
+        android:text="¡Parchemos!"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEvent1"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
