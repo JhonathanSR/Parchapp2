@@ -22,4 +22,8 @@ Detalles del Evento: Selecciona un evento para ver detalles como la descripción
 
 Reportando Bugs: Si encuentras un error, por favor, abre un issue en nuestro repositorio de GitHub.
 Solicitudes de Funciones: ¿Tienes una idea para una nueva característica? Envíanos una propuesta.
-Desarrollo: Si eres desarrollador, revisa nuestros issues abiertos y contribuye con tu código.                                                                                               
+Desarrollo: Si eres desarrollador, revisa nuestros issues abiertos y contribuye con tu código.  
+
+## Clonar Repositorio
+git clone https://github.com/JhonathanSR/Parchapp2.git
+
