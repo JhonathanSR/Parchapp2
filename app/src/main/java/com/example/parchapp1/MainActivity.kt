@@ -2,6 +2,7 @@ package com.example.parchapp1
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -13,10 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     lateinit var usuariosDBHelper: mySQLiteHelper
-    lateinit var edtNombre: EditText
-    lateinit var edtPass: EditText
-    lateinit var txt_Registrate: TextView
-    lateinit var btn_Sesion: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,43 +26,75 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         usuariosDBHelper = mySQLiteHelper(this)
-        val edtNombre = findViewById<EditText>(R.id.edtNombre)
-        val edtPass = findViewById<EditText>(R.id.edtPass)
+        /*val nombre = findViewById<EditText>(R.id.edtNombre)
+        val contrasena = findViewById<EditText>(R.id.edtPass)*/
         val txt_Registrate = findViewById<TextView>(R.id.txt_Registrate)
-        val btn_Sesion = findViewById<Button>(R.id.btn_Sesion)
 
+        val btn_Sesion = findViewById<Button>(R.id.btn_Sesion)
+        btn_Sesion.setOnClickListener {
+            loginUser()
+
+        }
         txt_Registrate.setOnClickListener {
             goRegis()
         }
+    }
+    private  fun loginUser(){
+        val nombre = findViewById<EditText>(R.id.edtNombre).text.toString()
+        val contrasena = findViewById<EditText>(R.id.edtPass).text.toString()
 
-        btn_Sesion.setOnClickListener {
-            goIniciar()
-           /* val nombre = edtNombre.text.toString()
-            val contraseña = edtPass.text.toString()
-            if (usuariosDBHelper.obtenerDatos(nombre, contraseña)){
-                /*val  i = Intent(this, MainMenu::class.java)
+
+
+        Log.d("LoginUser", "Nombre: $nombre, Contraseña: $contrasena")
+
+        if (nombre.isNotEmpty() && contrasena.isNotEmpty()) {
+            val resultado = usuariosDBHelper.obtenerDatos(nombre, contrasena)
+
+            Log.d("LoginUser", "User login resultado: $resultado")
+
+            if (resultado) {
+                Toast.makeText(this, "Inicio de Sesión Exitoso",
+                    Toast.LENGTH_SHORT).show()
+                val i = Intent(this, MainMenu::class.java)
                 startActivity(i)
-                finish()*/
-            }else {
-                Toast.makeText(this, "Usuario y contraseña invalidos", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Usuario o contraseña incorrectos",
+                    Toast.LENGTH_SHORT).show()
             }
-            val  i = Intent(this, MainMenu::class.java)
-            startActivity(i)
-        }
-        /*val  i = Intent(this, MainMenu::class.java)
-        startActivity(i)*/
-        */
+        } else {
+            Toast.makeText(this, "Complete todos los campos",
+                Toast.LENGTH_SHORT).show()
         }
 
     }
-    private fun goIniciar(){
-        val i = Intent(this, MainMenu::class.java)
-        Toast.makeText(this, "Bienvenido a Parchapp",
-            Toast.LENGTH_SHORT).show()
-        startActivity(i)
-    }
+
+
     private fun goRegis(){
         val i = Intent(this, MainRegistro::class.java)
         startActivity(i)
     }
 }
+/*private fun loginUser(){
+        val i = Intent(this, MainMenu::class.java)
+        Toast.makeText(this, "Bienvenido a Parchapp",
+            Toast.LENGTH_SHORT).show()
+        startActivity(i)
+    }*/
+/*btn_Sesion.setOnClickListener {
+            goIniciar()*/
+/* val nombre = edtNombre.text.toString()
+ val contraseña = edtPass.text.toString()
+ if (usuariosDBHelper.obtenerDatos(nombre, contraseña)){
+     /*val  i = Intent(this, MainMenu::class.java)
+     startActivity(i)
+     finish()*/
+ }else {
+     Toast.makeText(this, "Usuario y contraseña invalidos", Toast.LENGTH_SHORT).show()
+ }
+ val  i = Intent(this, MainMenu::class.java)
+ startActivity(i)
+}
+/*val  i = Intent(this, MainMenu::class.java)
+startActivity(i)*/
+
+}*/

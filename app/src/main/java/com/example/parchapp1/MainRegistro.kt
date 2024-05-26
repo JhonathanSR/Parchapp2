@@ -44,8 +44,9 @@ class MainRegistro : AppCompatActivity() {
     private fun registerUser() {
         val nombre = findViewById<EditText>(R.id.edTNombre).text.toString()
         val contrasena = findViewById<EditText>(R.id.edTPass2).text.toString()
-        //Toast.makeText(this, "Usuario Registrado",
-            //Toast.LENGTH_SHORT).show()
+        /*binding.edTNombre.text.clear()
+        binding.edTPass2.text.clear()*/
+
 
         Log.d("RegisterUser", "Nombre: $nombre, Contrasena: $contrasena")
 
